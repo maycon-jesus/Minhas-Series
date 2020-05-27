@@ -32,4 +32,4 @@ Pronto você finalizou o build da aplicação.
 - Vá na pasta **backend**
 - Execute o comando:
 > $ npm start
-- Para acessar a aplicação abra seu navegar e entre em http://localhost:5544/
+- Para acessar a aplicação abra seu navegador e entre em http://localhost:5544/

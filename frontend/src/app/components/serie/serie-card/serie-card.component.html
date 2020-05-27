@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="geral">
+        <div class="capa" appSerieCapa [url]="serie.capaURL"></div>
+        <span class="name overlay">{{serie.nome}}</span>
+    </div>
+    <div class="detalhes">
+        <span class="name">{{serie.nome}}</span>
+        <div class="p-1">
+            <div>
+                <span class="key">Ano</span>
+                <span class="value">{{serie.anoInicio}} - {{textAnoFim(serie.anoFim)}}</span>
+            </div>
+            <div>
+                <span class="key">Temporadas</span>
+                <span class="value">{{serie.temporadas}}</span>
+            </div>
+            <div>
+                <span class="key">Eposódios</span>
+                <span class="value">{{serie.episodios}}</span>
+            </div>
+        </div>
+        <a class="btn" (click)="clickVisit(serie.id)">Detalhes</a>
+    </div>
+</div>

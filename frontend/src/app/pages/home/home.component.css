@@ -1,0 +1,26 @@
+section {
+  background-color: #212121;
+  min-height: 100%;
+}
+
+h1 {
+  color: #006d77;
+  text-shadow: 2px 2px 0px #83c5be;
+  font-size: 3rem;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 1em;
+  text-align: center;
+  font-family: monospace;
+}
+
+p.subtitle {
+  color: #fff;
+  text-align: center;
+}
+
+p.subtitle2 {
+  color: #ccc;
+  text-align: center;
+}

@@ -1,0 +1,8 @@
+<section>
+    <h1>Series</h1>
+    <button (click)="navigateTo('/series/criar')">Criar</button>
+    <div id="series">
+        <serie-card *ngFor="let serie of series" [serie]="serie">
+        </serie-card>
+    </div>
+</section>

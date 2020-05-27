@@ -1,0 +1,52 @@
+<div class="temporada">
+    <div class="header">
+        <span class="title">{{temporadaID+1}}° Temporada</span>
+        <span class="ano">{{temporada.ano}}</span>
+        <button class="delete" (click)="excluirTemporada()">Excluir</button>
+    </div>
+    <div class="episodios">
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Titulo</th>
+                    <th>Assistido?</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let episodio of temporada.episodios">
+                    <td>{{temporada.episodios.indexOf(episodio)+1}}</td>
+                    <td>
+                        <span *ngIf="!episodiosEditando.includes(indexEpisodio(episodio))">{{episodio.titulo}}</span>
+                        <input *ngIf="episodiosEditando.includes(indexEpisodio(episodio))" type="text"
+                            [(ngModel)]="episodio.titulo">
+                    </td>
+                    <td>
+                        <input type="checkbox" [(ngModel)]="episodio.visto">
+                    </td>
+                    <td>
+                        <button (click)="deleteEpisodio(indexEpisodio(episodio))" class="delete">Excluir</button>
+                        <button *ngIf="!episodiosEditando.includes(indexEpisodio(episodio))"
+                            (click)="editarEpisodio(indexEpisodio(episodio))" class="grey">Editar</button>
+                        <button *ngIf="episodiosEditando.includes(indexEpisodio(episodio))" (click)="salvar()"
+                            class="save">Salvar</button>
+                    </td>
+                </tr>
+                <tr *ngIf="addEpisodio">
+                    <td>{{temporada.episodios.length+1}}</td>
+                    <td>
+                        <input type="text" [(ngModel)]="addEpisodioForm.titulo">
+                    </td>
+                    <td>
+                        <input type="checkbox" [(ngModel)]="addEpisodioForm.visto">
+                    </td>
+                    <td>
+                        <button (click)="criarEpisodio()" class="save">Criar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="save mb-10" (click)="addEpisodioToggle()">Adicionar Episódio</button>
+</div>

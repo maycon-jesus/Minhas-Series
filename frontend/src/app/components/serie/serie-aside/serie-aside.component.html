@@ -1,0 +1,27 @@
+<aside>
+    <img class="capa" [src]="serie.capaURL">
+    <span class="name">{{serie.nome}}</span>
+
+    <div class="info">
+        <div>
+            <span class="key">Ano</span>
+            <span class="value">{{serie.anoInicio}} - {{textAnoFim(serie.anoFim)}}</span>
+        </div>
+        <div>
+            <span class="key">Temporadas</span>
+            <span class="value">{{countTemporadas()}}</span>
+        </div>
+        <div>
+            <span class="key">Episódios</span>
+            <span class="value">{{countEpisodios()}}</span>
+        </div>
+        <div>
+            <span class="key">Assistido</span>
+            <span class="value">{{countEpisodiosVistos()}} de {{countEpisodios()}}</span>
+        </div>
+    </div>
+    <div class="button-group">
+        <button (click)="navigateEditar(serie.id)" class="save">Editar</button>
+        <button (click)="excluirSerie()" class="delete">Excluir</button>
+    </div>
+</aside>

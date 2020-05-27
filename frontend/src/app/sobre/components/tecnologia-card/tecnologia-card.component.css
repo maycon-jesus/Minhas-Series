@@ -1,0 +1,18 @@
+.card {
+  padding: 7px;
+  border: 2px solid #00000066;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.card img {
+  height: 128px;
+}
+
+.card .nome {
+  color: #fafafa;
+  font-size: 1.3em;
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+}

@@ -1,0 +1,17 @@
+<section>
+    <app-serie-aside *ngIf="!modoCriacao && !modoEdicao" [serie]="serie"></app-serie-aside>
+    <div class="w-100" *ngIf="!modoCriacao && !modoEdicao">
+        <div class="w-100" *ngFor="let temporada of serie.temporadas">
+            <div class="w-100" *ngIf="!temporada.desativado">
+                <div class="w-100 p-10">
+                    <app-serie-temporada [temporada]="temporada" [temporadaID]="indexTemporada(temporada)"
+                        [serieID]="serie.id">
+                    </app-serie-temporada>
+                </div>
+            </div>
+        </div>
+        <button class="save mb-15" (click)="adicionarTemporada()">Adicionar Temporada</button>
+    </div>
+    <app-serie-create *ngIf="modoCriacao || modoEdicao" [modoCriacao]="modoCriacao" [modoEdicao]="modoEdicao">
+    </app-serie-create>
+</section>

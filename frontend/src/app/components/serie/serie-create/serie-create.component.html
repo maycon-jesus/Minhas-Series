@@ -1,0 +1,26 @@
+<div class="w-100">
+    <h1 *ngIf="modoEdicao">Editar Série</h1>
+    <h1 *ngIf="modoCriacao">Criar Série</h1>
+    <form>
+        <div class="input-field col s6">
+            <input type="text" [(ngModel)]="serie.nome" name="nome" id="input-nome" required>
+            <label for="input-nome">Nome</label>
+        </div>
+        <div class="input-field col s6">
+            <input type="text" [(ngModel)]="serie.capaURL" name="capaURL" id="input-capa" required>
+            <label for="input-capa">Capa (URL)</label>
+        </div>
+        <div class="input-field col">
+            <label>Ano do Lançamento</label>
+            <input type="number" [(ngModel)]="serie.anoInicio" name="anoInicio">
+        </div>
+        <div class="input-field col">
+            <label>Ano do Fim</label>
+            <input type="number" [(ngModel)]="serie.anoFim" name="anoFim">
+        </div>
+        <div class="input-field">
+            <button *ngIf="modoCriacao" type="button" (click)="criarSerie()">Criar</button>
+            <button *ngIf="modoEdicao" type="button" (click)="salvarSerie()">Salvar</button>
+        </div>
+    </form>
+</div>
